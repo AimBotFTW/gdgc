@@ -11,8 +11,22 @@
   --color-smell: #D97706;
   --color-opt: #16A34A;
 
-  --font-space-grotesk: var(--font-space-grotesk), sans-serif;
-  --font-jetbrains-mono: var(--font-jetbrains-mono), monospace;
+  /* Map Tailwind font utilities to next/font CSS variables set on <html> */
+  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  --animate-fade-in: fade-in 150ms ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Subtle drafting grid background */

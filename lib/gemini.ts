@@ -63,10 +63,20 @@ export async function analyzeCode(request: RoastRequest): Promise<RoastResult> {
       }
 
       return {
-        roast: parsed.roast ?? "",
-        issues: Array.isArray(parsed.issues) ? parsed.issues : [],
-        correctedCode: parsed.correctedCode ?? "",
-        takeaway: parsed.takeaway ?? "",
+        roast: typeof parsed.roast === "string" ? parsed.roast : "",
+        issues: Array.isArray(parsed.issues)
+          ? parsed.issues.filter(
+              (issue): issue is RoastResult["issues"][number] =>
+                !!issue &&
+                typeof issue === "object" &&
+                typeof (issue as RoastResult["issues"][number]).line === "number" &&
+                typeof (issue as RoastResult["issues"][number]).severity === "string" &&
+                typeof (issue as RoastResult["issues"][number]).title === "string"
+            )
+          : [],
+        correctedCode:
+          typeof parsed.correctedCode === "string" ? parsed.correctedCode : "",
+        takeaway: typeof parsed.takeaway === "string" ? parsed.takeaway : "",
       };
     } catch (error: unknown) {
       const status =

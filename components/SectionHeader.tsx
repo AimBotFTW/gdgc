@@ -12,7 +12,7 @@ export function SectionHeader({ number, title, children }: SectionHeaderProps) {
   return (
     <div className="flex items-center justify-between border-b border-frame/20 pb-2 mb-3">
       <span className="font-mono text-xs font-bold uppercase tracking-widest text-frame">
-        {paddedNumber} // {title}
+        {paddedNumber}{" // "}{title}
       </span>
       {children && <div>{children}</div>}
     </div>

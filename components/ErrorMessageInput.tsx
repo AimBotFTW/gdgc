@@ -12,7 +12,7 @@ export function ErrorMessageInput({
   onClose,
 }: ErrorMessageInputProps) {
   return (
-    <div className="border-b border-frame bg-canvas p-3 transition-all animate-fadeIn">
+    <div className="border-b border-frame bg-canvas p-3 transition-all animate-fade-in">
       <div className="flex items-center justify-between mb-2">
         <label
           htmlFor="error-traceback"

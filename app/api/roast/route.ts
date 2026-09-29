@@ -3,6 +3,9 @@ import { DEFAULTS, LANGUAGES, LIMITS, ROAST_LEVELS } from "@/config/app.config";
 import { analyzeCode } from "@/lib/gemini";
 import { LanguageId, RoastLevel } from "@/types/roast";
 
+// Gemini analysis (with retries) can exceed the default serverless timeout.
+export const maxDuration = 60;
+
 export async function POST(req: NextRequest) {
   let body: unknown;
   try {

@@ -68,6 +68,7 @@ export function RoastControls({
           <select
             value={language}
             onChange={(e) => onLanguageChange(e.target.value as LanguageId)}
+            aria-label="Programming language"
             className="appearance-none border border-frame bg-panel px-2.5 py-1.5 pr-7 font-mono text-[11px] font-bold uppercase tracking-wider text-frame shadow-[1px_1px_0px_#111111] cursor-pointer outline-none focus:border-accent"
           >
             {LANGUAGES.map((lang) => (

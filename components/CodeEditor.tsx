@@ -128,6 +128,7 @@ export function CodeEditor({
             spellCheck={false}
             autoCapitalize="off"
             autoComplete="off"
+            aria-label="Code editor"
             placeholder="// Paste your code here..."
             className="w-full h-full p-3 font-mono text-xs leading-6 text-frame bg-transparent resize-none outline-none overflow-auto custom-scroll selection:bg-accent selection:text-white"
           />

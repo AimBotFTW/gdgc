@@ -30,7 +30,7 @@ export function StatusBar({ isRoasting }: StatusBarProps) {
         </div>
 
         <div className="uppercase tracking-widest font-bold text-frame/80 text-[10px]">
-          {APP.name} {APP.version} // LIVE
+          {APP.name} {APP.version}{" // LIVE"}
         </div>
       </div>
 
